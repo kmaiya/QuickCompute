@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html style="margin-top:-8px; margin-left:-8px;">
+<head>
+<meta charset="utf-8">
+<title>Convert</title>
+<script src="jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="calchome.css">
+<script src="4func.js" type="text/javascript"></script>
+<script src="converter.js" type="text/javascript"></script>
+<?php
+    //$php_var = "Hello world from PHP";
+    $pplArr= file("hello.txt");
+?>
+</head>
+<body >
+<div id="qwer"></div>
+<script>
+   var arr= <?php echo json_encode($pplArr); ?>;
+   for (var i = 0; i < 2; i++) {
+   	//document.write(arr[i]);
+   jQuery('<div/>', {
+    id: 'foo' +i,
+    href: 'http://google.com',
+    title: 'Become a Googler',
+    rel: 'external',
+    text: arr[i],
+}).appendTo('body');
+   }
+   alert(document.getElementById("foo1").innerHTML);
+    </script>
+<form action="cool.php" method="post">
+<input name ="username" placeholder="Name">
+<input name= "comment" placeholder="Make your mind heard..." />
+<input type ="submit">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'robotothin';
+    src: url('font/Roboto-Thin-webfont.eot');
+    src: url('font/Roboto-Thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/Roboto-Thin-webfont.woff') format('woff'),
+         url('font/Roboto-Thin-webfont.ttf') format('truetype'),
+         url('font/Roboto-Thin-webfont.svg#robotothin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.navspan
+{
+color:white;
+display: inline-block;
+text-align: center;
+width: 200px;
+-webkit-box-sizing:border-box;
+box-sizing: border-box;
+-webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+.navspan, .navspan:hover, .navspan:focus
+{
+	text-decoration: none;
+	text-shadow: none;
+	-webkit-transition: 400ms linear 0s;
+	-moz-transition: 400ms linear 0s;
+	-o-transition: 400ms linear 0s;
+	transition: 400ms linear 0s;
+	outline: 0 none;
+}  
+.navspan:hover, .navspan:focus
+{
+cursor: pointer;
+color: white;
+background-color: #707070;
+}
+.hider
+{
+visibility: hidden;
+}
+html, button, input, form
+{
+font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'robotothin', 'Helvetica Neue', Arial, Helvetica;
+}

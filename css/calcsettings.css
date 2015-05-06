@@ -1,0 +1,20 @@
+.setcent
+{
+width:200px;
+margin: 0 auto;
+}
+.setbutton
+{
+height:50px;
+width: 200px;
+font-size: 30px;
+margin-bottom: 20px;
+border-radius:10px;
+cursor: pointer;
+}
+.setbutton:active
+{
+cursor: pointer;
+ -webkit-box-shadow: inset 0 0 10px 1px black;
+  -moz-box-shadow: inset 0 0 10px 1px black;
+}

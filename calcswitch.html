@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" href="css/calchome.css">
+<link rel="stylesheet" type="text/css" href="css/collective.css">
+<script src="script/4func.js" type="text/javascript"></script>
+<script src="script/lib/jquery.js" type="text/javascript"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/plugins/CSSPlugin.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/easing/EasePack.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenLite.min.js"></script>
+</head>
+<body onload="remLog()">
+<style>
+button,img,div
+{
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+}
+</style>
+<div id="calc" style="top:0" class="calccent">
+	<div id="acbackmod" class ="overl" >
+<input type="button" id="ce" value="CE" onmouseover="parent.explainer(this.id)" onmouseout="parent.cexplainer(this.id)" onclick="parent.ac()" class="coolbutton"/>
+<input type="button" id="del" value="&larr;" onmouseover="parent.explainer(this.id)" onmouseout="parent.cexplainer(this.id)" onclick="parent.backSpace()" class="coolbutton"/>
+<input type="button" id="^" value="^" onclick="parent.opera(this.id)"class="coolbutton"/>
+<input type="button" id="switch" value="&#8629;" onclick="parent.switchLaunch1()" class="coolbutton"/>
+</div>
+<div id="onetwothree" class="overl">
+<button id="square" class="coolbutton"  onclick="parent.specpower(this.id)">x<sup style="font-size:20px">2</sup></button>
+<button id="cube" class="coolbutton"  onclick="parent.specpower(this.id)">x<sup style="font-size:20px">3</sup></button>
+<button id="quart" class="coolbutton"  onclick="parent.specpower(this.id)">x<sup style="font-size:20px">4</sup></button>
+<button id="sin" class="coolbutton"  onclick="parent.specpower(this.id)">sin</button>
+</div>
+<div id="fourfivesix" class="overl">
+<button id="squarer" class="coolbutton"  onclick="parent.specpower(this.id)">&radic;x</button>
+<button id="cuber" class="coolbutton"  onclick="parent.specpower(this.id)"><sup style="font-size:13px">3</sup>&radic;x</button>
+<button id="quarter" class="coolbutton"  onclick="parent.specpower(this.id)"><sup style="font-size:13px;">4</sup>&radic;x</button>
+<button id="cos" class="coolbutton" onclick="parent.specpower(this.id)" style="font-size:28px">cos</button>
+</div>
+<div id="seveneightnine" class="overl">
+<button id="etox" class="coolbutton"  onclick="parent.specpower(this.id)">e<sup style="font-size:20px">x</sup></button>
+<button id="2tox" class="coolbutton"  onclick="parent.specpower(this.id)">2<sup style="font-size:20px">x</sup></button>
+<input type="button"  id="e" value="E" style="font-size:35px" onmouseover="parent.explainer(this.id)" onmouseout="parent.cexplainer(this.id)" onclick="parent.number(this.id)" class="coolbutton"/>
+<button id="tan" class="coolbutton"  onclick="parent.specpower(this.id)" style="font-size:34px">tan</button>
+</div>
+<div id="pmzeroequal" class="overl">
+<input type="button" id="ln" value="ln" onclick="parent.specpower(this.id)" class="coolbutton"/>
+<button id="log10" class="coolbutton" onclick="parent.specpower(this.id)">log</button>
+<input type="button" id="m+" value="m+" onmouseover="parent.explainer(this.id)" onmouseout="parent.cexplainer(this.id)" onclick="parent.addmem()" class="coolbutton"/>
+<input type="button" id="!" value="x!" onmouseover="parent.explainer(this.id)" onmouseout="parent.cexplainer(this.id)" onclick="parent.specpower(this.id)" class="coolbutton"/>
+</div>
+<div id="pointmod" class="overl">
+<input type="button" id="blank" value=" " class="coolbuttonblank"/>
+<input type="button" id="mc" value="mc" onmouseover="parent.explainer(this.id)" onmouseout="parent.cexplainer(this.id)" onclick="parent.clearmem()" class="coolbutton"/>
+<input type="button" id="mr" value="mr" onmouseover="parent.explainer(this.id)" onmouseout="parent.cexplainer(this.id)" onclick="parent.recallmem()" class="coolbutton"/>
+<input type="button" id="blank" value=" " class="coolbuttonblank"/>
+</div>
+</div>
+<script >
+window.dragi =false;
+$('.coolbutton').on('mouseover',function() {
+	onhover(this.id);
+});
+$('.coolbutton').mousedown(function() {
+	onhoverdown(this.id);
+});
+$('.coolbutton').mouseup(function() {
+	onhoverup(this.id);
+});
+$('.coolbutton').on('mouseout',function() {
+	onhoverout(this.id);
+});
+$('[onmouseover]').on('touchstart',function() {
+	parent.explainer(this.id);
+});
+$('[onmouseover]').on('touchmove',function(e) {
+	e.preventDefault();
+});
+$('[onmouseover]').on('touchend',function() {
+	parent.cexplainer(this.id);
+});
+$('.coolbutton').on('touchstart',function() {
+	onhover(this.id);
+});
+$('.coolbutton').on('touchmove',function(e) {
+	e.preventDefault();
+	window['dragi'] = true;
+});
+$('.coolbutton').on('touchend',function(e) {
+	e.preventDefault();
+	onhoverout(this.id);
+	if (window['dragi'] != true) {
+		document.getElementById(this.id).click();
+	}
+	else {
+		window['dragi']= false;
+	}
+});
+
+</script>
+</body>
+</html>
